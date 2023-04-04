@@ -6,34 +6,29 @@ public class User extends BaseModel {           //POJO CLASS
 
     private String email;
 
-    private String countryId;
+    private Long countryId;
 
-    @Override
-    public Long getId() {
-        return super.getId();
+    public User(Long id, String username, String email, Long countryId) {
+        super(id);
+        this.username = username;
+        this.email = email;
+        this.countryId = countryId;
+    }
+    public Long getCountryId() {
+        return countryId;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public String getCountryId() {
-        return countryId;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setCountryId(String countryId) {
-        this.countryId = countryId;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + getId() +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", countryId=" + countryId +
+                '}';
     }
 }

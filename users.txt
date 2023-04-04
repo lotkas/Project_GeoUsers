@@ -1,0 +1,4 @@
+1,aboba,aboba@mail.ru,2
+2,billiboba,billiboba@mail.ru,5
+3,jeka,jeka@mail.ru,1
+4,vitya,vitya@mail.ru,12

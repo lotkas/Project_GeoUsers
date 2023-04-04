@@ -1,13 +1,16 @@
 package VITYATEST.view;
 
 import VITYATEST.controller.CountryController;
+import VITYATEST.model.Country;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CountryView {
     String operationsInfo = ("""
             -----------------------
-            1. Get all Country's
+            1. Get all Countries
             2. Back
             -----------------------
             """);
@@ -25,7 +28,7 @@ public class CountryView {
                 operation = in.next();
 
                 switch (operation) {
-                    case "1" -> getAllCountrys();
+                    case "1" -> getAllCountries();
                     case "2" -> Status = false;
                     default -> System.out.println("Unknown command");
                 }
@@ -34,8 +37,8 @@ public class CountryView {
             throw new RuntimeException(e);
         }
     }
-    public void getAllCountrys(){
-        // List<Country> countryList = new List<Country>(CountryController.getAll());
-        // CountryList.forEach(n -> System.out.println("Name: " + n.getName() + "ID: " + n.getId()));
-        }
+
+    public void getAllCountries() {
+        List<Country> countries = new ArrayList<>(countryController.getAll());
     }
+}

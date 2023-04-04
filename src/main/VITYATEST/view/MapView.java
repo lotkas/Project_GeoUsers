@@ -1,27 +1,25 @@
 package VITYATEST.view;
 
-import VITYATEST.controller.CountryController;
 import VITYATEST.controller.UserController;
+import VITYATEST.model.Country;
 import VITYATEST.model.User;
-import com.sun.source.tree.WhileLoopTree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-public class UserView {
+public class MapView {
     String operationsInfo = ("""
             -----------------------
-            1. Get all User's
+            1. Get Map
             2. Back
             -----------------------
             """);
     Scanner in = new Scanner(System.in);
     Boolean Status = true;
     String operation;
+
     UserController userController = new UserController();
 
-    public void runUserView() {
+    public void runGetMapView() {
         try {
             Status = true;
             while (Status) {
@@ -30,7 +28,7 @@ public class UserView {
                 operation = in.next();
 
                 switch (operation) {
-                    case "1" -> getAllUsers();
+                    case "1" -> getUsersById();
                     case "2" -> Status = false;
                     default -> System.out.println("Unknown command");
                 }
@@ -40,7 +38,8 @@ public class UserView {
         }
     }
 
-    public void getAllUsers() {
-        List<User> users = new ArrayList<>(userController.getAll());
+    public void getUsersById() {
+        Map<Country, List<User>> usersByCountry = new HashMap<>(userController.getUserByIdCountry());
     }
 }
+

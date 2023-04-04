@@ -1,16 +1,16 @@
 package VITYATEST.controller;
 
-import VITYATEST.IO.JavaCountryRepositoryIOImpl;
 import VITYATEST.model.Country;
-import VITYATEST.repository.CountryRepository;
+import VITYATEST.service.CountryService;
+import VITYATEST.service.UserService;
 
 import java.util.List;
 
 public class CountryController {
-    CountryRepository countryRepository = new JavaCountryRepositoryIOImpl();
 
-   // public List<Country> getAll() {
-        //return countryRepository.getAll();
+    CountryService countryService = new CountryService();
+
+    public List<Country> getAll() {
+        return countryService.getAll();
     }
-
-
+}

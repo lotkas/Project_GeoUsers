@@ -1,0 +1,4 @@
+5,Latvia
+2,Nigeria
+1,Albania
+4,Russia

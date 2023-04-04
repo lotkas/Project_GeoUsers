@@ -1,9 +1,20 @@
 package VITYATEST.controller;
 
-import VITYATEST.IO.JavaUserRepositoryIOImpl;
-import VITYATEST.repository.UserRepository;
+import VITYATEST.model.Country;
+import VITYATEST.model.User;
+import VITYATEST.service.UserService;
+
+import java.util.List;
+import java.util.Map;
 
 public class UserController {
-    UserRepository userRepository = new JavaUserRepositoryIOImpl();
+    UserService userService = new UserService();
 
+    public List<User> getAll() {
+        return userService.getAll();
+    }
+
+    public Map<Country, List<User>> getUserByIdCountry(){
+        return userService.getUserByIdCountry();
+    }
 }
